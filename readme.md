@@ -1,1 +1,1 @@
-# hehe
+# A chrome extension that tallies the amount of time spent weekly on each website. Also sends alerts to the user and emails to the users friends if procrastination is detected.
