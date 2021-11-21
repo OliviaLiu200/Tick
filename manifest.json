@@ -1,0 +1,12 @@
+{
+  "name": "Tick",
+  "description": "tracks and eliminates procrastination",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "main_popup.html",
+    "default_title": "Tick"
+  },
+  "permissions": ["activeTab"],
+  "content_security_policy": "script-src 'self' https://kit.fontawesome.com/ae925b228c.js; object-src 'self'"
+}
