@@ -13,7 +13,8 @@
     <script
       src="https://kit.fontawesome.com/ae925b228c.js"
       crossorigin="anonymous"
-    ></script>
+    >
+  </script>
     <style>
       #html,
       body {
@@ -39,6 +40,52 @@
     </style>
   </head>
   <body>
+    <script>
+      var hours;
+      var name;
+      var email;
+          var buttonsclicked = 0;
+          var sitesChosen = [];
+          function setHours(id){
+              hours = document.getElementById(id).value; 
+          }
+          function setName(id){
+              name = document.getElementById(id).value;    
+          }
+          function setEmail(id){
+              email = document.getElementById(id).value;
+          }
+          function finalSubmit(id1, id2, id3){
+            if (document.getElementById(id1).value == "" || document.getElementById(id2).value == "" || document.getElementById(id3).value == ""){
+              alert("One or more areas have been left blank. Please fill in all the boxes.")
+            }
+            else {
+              hours = document.getElementById(id1).value;
+            name = document.getElementById(id2).value;
+            email = document.getElementById(id3).value;
+            window.location = "main_popup.html";
+            }
+          }
+function setColor(btn){
+    if (document.getElementById(btn).value == "true"){
+      if (buttonsclicked == 3){
+      alert("A maximum of 3 websites can be tracked.");
+    }
+    else {
+      document.getElementById(btn).value = "false";
+        buttonsclicked ++;
+        document.getElementById(btn).style.backgroundColor = '#A6A6A6';
+        sitesChosen.push(btn);
+    }
+    }
+    else {
+      document.getElementById(btn).value = "true";
+        buttonsclicked --;
+        document.getElementById(btn).style.backgroundColor = "#FFFFFF"
+        sitesChosen.splice(sitesChosen.indexOf(btn), 1);
+    }
+}
+    </script>
     <div id="top">
       <h1 class="logo" style="color: green">
         <i class="fas fa-clock"></i>
@@ -48,95 +95,46 @@
       <h1 style="padding-left: 10px; font-size: 40px; margin: 0px">
         Choose unproductive sites
       </h1>
-      <button style="padding: 10px; padding-bottom: 0px; margin: 10px">
+      <button id="Youtube" style="padding: 10px; padding-bottom: 0px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Youtube')" value="true">
         <img
         src=https://logos-world.net/wp-content/uploads/2020/04/YouTube-Emblem.png
         alt="Youtube" height="80" width="136">
         <h4>Youtube</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Netflix" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Netflix')" value="true">
         <img
         src=https://cdn.vox-cdn.com/thumbor/AwKSiDyDnwy_qoVdLPyoRPUPo00=/39x0:3111x2048/1400x1400/filters:focal(39x0:3111x2048):format(png)/cdn.vox-cdn.com/uploads/chorus_image/image/49901753/netflixlogo.0.0.png
         alt="Netflix" height="80" width="80">
         <h4>Netflix</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Twitch" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Twitch')" value="true">
         <img
         src=https://images.koji-cdn.com/generic/RGmZ42RYKvdGiUgC33NdrnEmNJr2_1623879791830.jpg?fm=webp&w=120?w=138
         alt="Twitch" height="80" width="80">
         <h4>Twitch</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Facebook" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Facebook')" value="true">
         <img src=https://www.facebook.com/images/fb_icon_325x325.png
         alt="Facebook" height="80" width="80">
         <h4>Facebook</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Instagram" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Instagram')" value="true">
         <img src=https://assets.stickpng.com/images/580b57fcd9996e24bc43c521.png
         alt="Instagram" height="80" width="80">
         <h4>Instagram</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Twitter" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Twitter')" value="true">
         <img src=https://cdn-icons-png.flaticon.com/512/124/124021.png
         alt="Twitter" height="80" width="80">
         <h4>Twitter</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Pinterest" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Pinterest')" value="true">
         <img
         src=https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png
         alt="Pinterest" height="80" width="80">
         <h4>Pinterest</h4>
       </button>
-      <button
-        style="
-          padding: 38px;
-          padding-bottom: 0px;
-          padding-top: 10px;
-          margin: 10px;
-        "
-      >
+      <button id="Reddit" style="padding: 38px; padding-bottom: 0px; padding-top: 10px; margin: 10px; background-color: #FFFFFF;" onclick="setColor('Reddit')" value="true">
         <img src=https://www.redditinc.com/assets/images/site/reddit-logo.png
         alt="Reddit" height="80" width="80">
         <h4>Reddit</h4>
@@ -144,18 +142,18 @@
     </div>
     <div id="bottom">
       <br />
-      <form style="margin: 20px; margin-left: 120px; margin-top: 10px">
+      <form style="margin: 20px; margin-left: 120px; margin-top: 10px" onsubmit="setHours('hours');return false" autocomplete="off">
         <label for="hours" style="font-size: 30px">Hours: </label>
-        <input type="number" id="hours" style="font-size: 30px" />
+        <input type="number" id="hours" style="font-size: 30px">
       </form>
-      <form style="margin: 20px; margin-left: 120px; margin-top: 10px">
+      <form style="margin: 20px; margin-left: 120px; margin-top: 10px" onsubmit="setName('name');return false" autocomplete="off">
         <label for="name" style="font-size: 30px">Name: </label>
-        <input type="text" id="name" style="font-size: 30px" />
+        <input type="text" id="name" style="font-size: 30px"/>
+        <input type="submit" id="submit" style="font-size: 30px; margin-left: 70px" onclick="finalSubmit('hours','name','email')">
       </form>
-      <form style="margin: 20px; margin-left: 120px; margin-top: 10px">
+      <form style="margin: 20px; margin-left: 120px; margin-top: 10px" onsubmit="setEmail('email');return false" autocomplete="off">
         <label for="email" style="font-size: 30px">Email: </label>
         <input type="text" id="email" style="font-size: 30px" />
-      </form>
     </div>
   </body>
 </html>
