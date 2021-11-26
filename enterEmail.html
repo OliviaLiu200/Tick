@@ -6,7 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .inputs {
+        width: 20%;
+        padding: 2px;
+        margin-top: 5px;
+        border-bottom: 5px;
+    }
+    .email {
+        margin-top: 10px;
+    }
+</style>
 <body>
-    <input type="email" placeholder="Enter Email" class="email" name="email" id="email" required>
+    <script>
+        var name;
+        var email;
+        var listFriends = [];
+        function setName(id) {
+            name = document.getElementbyId(id).value;
+        }
+        function setEmail(id) {
+            email = document.getElementbyId(id).value;
+        }
+        function finalSubmit(id1, id2) {
+            if (document.getElementById(id1).value == "" || document.getElementById(id2).value =="")
+            {
+                alert("Please fill in all fields.")
+            }
+            else {
+                name = document.getElementById(id1).value;
+                email = document.getElementById(id2).value;
+                window.location = "friendsListYeet.html";
+            }
+        }
+    </script>
+    <form class="inputs" onsubmit="setName('name');return false" autocomplete="off">
+        <input type="text" placeholder="Name" name="name" id="name" required>
+    </form>
+    <form onsubmit="setEmail('email'); return false" autocomplete="off">
+        <input type="text" placeholder="Enter Email" class="email" name="email" id="email" required>
+    </form>
+    <form onclick="finalSubmit('name', 'email')">
+        <input type="submit" id="submit" style="position: fixed; margin-top: 40px; left: 15px"> 
+    </form>
+    <a href="friendsListYeet.html">
+        <button class="back" style="margin-top: 7px; margin-left: 80px">Back</button>
+    </a>
+    <p id="demo"></p>
 </body>
 </html>
