@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,29 +14,31 @@
         margin-top: 5px;
         border-bottom: 5px;
     }
+
     .email {
         margin-top: 10px;
     }
 </style>
+
 <body>
     <script>
         var name;
         var email;
         var listFriends = [];
         function setName(id) {
-            name = document.getElementbyId(id).value;
+            name = document.getElementById(id).value;
         }
         function setEmail(id) {
-            email = document.getElementbyId(id).value;
+            email = document.getElementById(id).value;
         }
         function finalSubmit(id1, id2) {
-            if (document.getElementById(id1).value == "" || document.getElementById(id2).value =="")
-            {
-                alert("Please fill in all fields.")
+            if (document.getElementById(id1).value == "" || document.getElementById(id2).value == "") {
+                alert("Please fill in all fields.");
             }
             else {
                 name = document.getElementById(id1).value;
                 email = document.getElementById(id2).value;
+                listFriends.push([name, email]);
                 window.location = "friendsListYeet.html";
             }
         }
@@ -43,15 +46,16 @@
     <form class="inputs" onsubmit="setName('name');return false" autocomplete="off">
         <input type="text" placeholder="Name" name="name" id="name" required>
     </form>
-    <form onsubmit="setEmail('email'); return false" autocomplete="off">
+    <form onsubmit="setEmail('email');return false" autocomplete="off">
         <input type="text" placeholder="Enter Email" class="email" name="email" id="email" required>
     </form>
-    <form onclick="finalSubmit('name', 'email')">
-        <input type="submit" id="submit" style="position: fixed; margin-top: 40px; left: 15px"> 
+    <form onclick="finalSubmit('name', 'email');return false">
+        <input type="submit" id="submit" style="position: fixed; margin-top: 40px; left: 15px">
     </form>
     <a href="friendsListYeet.html">
         <button class="back" style="margin-top: 7px; margin-left: 80px">Back</button>
     </a>
     <p id="demo"></p>
 </body>
+
 </html>

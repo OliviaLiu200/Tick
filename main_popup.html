@@ -1,138 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tick Main</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans"
-      type="text/css"
-    />
-    <script
-      src="https://kit.fontawesome.com/ae925b228c.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <style>
-      html,
-      body {
-        font-family: "Open Sans", sans-serif;
-        font-size: 14px;
-        margin: 0;
-        min-height: 235px;
-        padding: 0;
-        width: 384px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tick Main</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" type="text/css" />
+  <script src="https://kit.fontawesome.com/ae925b228c.js" crossorigin="anonymous"></script>
 
-      h1 {
-        font-family: "Menlo", monospace;
-        font-size: 22px;
-        font-weight: 400;
-        margin: 0;
-        color: green;
-      }
+  <style>
+    html,
+    body {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 235px;
+      padding: 0;
+      width: 384px;
+    }
 
-      a:link,
-      a:visited {
-        color: black;
-        outline: 0;
-        text-decoration: none;
-      }
+    h1 {
+      font-family: "Menlo", monospace;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0;
+      color: green;
+    }
 
-      .modal-header {
-        align-items: center;
-        border-bottom: 1px solid #dadada;
-      }
+    a:link,
+    a:visited {
+      color: black;
+      outline: 0;
+      text-decoration: none;
+    }
 
-      .modal-content {
-        padding: 0 22px;
-      }
+    .modal-header {
+      align-items: center;
+      border-bottom: 1px solid #dadada;
+    }
 
-      .modal-buttons {
-        border-top: 1px solid #dadada;
-        height: 90px;
-        width: 100%;
-      }
+    .modal-content {
+      padding: 0 22px;
+    }
 
-      .modal-countdown {
-        padding: 0 30px;
-        border-top: 0.5px solid #dadada;
-        font-size: larger;
-        font-style: italic;
-        width: 100%;
-      }
+    .modal-buttons {
+      border-top: 1px solid #dadada;
+      height: 90px;
+      width: 100%;
+    }
 
-      .logo {
-        padding: 16px;
-      }
+    .modal-countdown {
+      padding: 0 30px;
+      border-top: 0.5px solid #dadada;
+      font-size: larger;
+      font-style: italic;
+      width: 100%;
+    }
 
-      .logo-icon {
-        vertical-align: text-bottom;
-        margin-right: 12px;
-      }
+    .logo {
+      padding: 16px;
+    }
 
-      .version {
-        color: green;
-        font-size: 18px;
-      }
+    .logo-icon {
+      vertical-align: text-bottom;
+      margin-right: 12px;
+    }
 
-      .flex-container {
-        justify-content: space-between;
-        padding: 15px 90px;
-      }
+    .version {
+      color: green;
+      font-size: 18px;
+    }
 
-      .flex {
-        opacity: 1;
-        transition: opacity 0.2s ease-in-out;
-        width: 300px;
-        padding: 5px;
-      }
+    .flex-container {
+      justify-content: space-between;
+      padding: 15px 90px;
+    }
 
-      .flex:hover {
-        opacity: 0.4;
-      }
+    .flex {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+      width: 300px;
+      padding: 5px;
+    }
 
-      .flex .fas {
-        font-size: 40px;
-        color: black;
-      }
+    .flex:hover {
+      opacity: 0.4;
+    }
 
-      .flex .fa {
-        font-size: 40px;
-        color: black;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="modal-header">
-      <h1 class="logo">
-        <i class="fas fa-clock"></i>
-        Tick
-        <span class="verson">(1.0.0)</span>
-      </h1>
-    </div>
-    <div class="modal-content">
-      <p>quantifies procrastination</p>
-    </div>
-    <div class="modal-buttons">
-      <div class="flex-container">
-        <div class="flex">
-          <a href="friendsListYeet.html" target="_blank">
-            <button>View friends list</button>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="weekly_progress.html" target="_blank">
-            <button>View weekly progress</button>
-          </a>
-        </div>
+    .flex .fas {
+      font-size: 40px;
+      color: black;
+    }
+
+    .flex .fa {
+      font-size: 40px;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal-header">
+    <h1 class="logo">
+      <i class="fas fa-clock"></i>
+      Tick
+      <span class="verson">(1.0.0)</span>
+    </h1>
+  </div>
+  <div class="modal-content">
+    <p>quantifies procrastination</p>
+  </div>
+  <div class="modal-buttons">
+    <div class="flex-container">
+      <div class="flex">
+        <a href="friendsListYeet.html" target="_blank">
+          <button>View friends list</button>
+        </a>
+      </div>
+      <div class="flex">
+        <a href="weekly_progress.html" target="_blank">
+          <button>View weekly progress</button>
+        </a>
       </div>
     </div>
-    <div class="modal-countdown">
-      23 hours untill we email your friends!
-      <i class="far fa-tired"></i>
-    </div>
-  </body>
+  </div>
+  <div class="modal-countdown">
+    23 hours untill we email your friends!
+    <i class="far fa-tired"></i>
+  </div>
+</body>
+
 </html>
