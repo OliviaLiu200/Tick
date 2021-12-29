@@ -16,10 +16,12 @@ var mailOptions = {
   text: 'Your Friend <user> is procrastinating! Do something about it!' // change <user> to user name
 };
 
-transporter.sendMail(mailOptions, function(err, data){ // the function needed to export
+transporter.sendMail(mailOptions, function(err, data){ // the function needed to export i think
   if (err) {
     console.log('Error', err)
   } else {
     console.log('Email sent')
   }
 })
+
+module.exports = {transporter}
