@@ -13,7 +13,7 @@ var mailOptions = {
   from: 'tickreminder@gmail.com',
   to: 'stephen382012@hotmail.com', //need to change this to user's friends somehow
   subject: 'Your Friend is Procrastinating',
-  text: 'Your Friend <user> is procrastinating! Do something about it!' // change <user> to user name
+  text: 'Your Friend' + chrome.storage.sync.get('name') + ' is procrastinating! Do something about it!' // change <user> to user name
 };
 
 transporter.sendMail(mailOptions, function(err, data){ // the function needed to export i think
