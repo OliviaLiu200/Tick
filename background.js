@@ -114,3 +114,9 @@ function onTabTrack(activeInfo){
 }
 
 chrome.tabs.onActivated.addListener(onTabTrack);
+
+chrome.runtime.onInstalled.addListener(function (object) {
+    chrome.tabs.create({url: `chrome-extension://${chrome.runtime.id}/installation_popup.html`}, function (tab) {
+        console.log("options page opened");
+    });
+});
