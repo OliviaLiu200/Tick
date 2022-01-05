@@ -43,7 +43,6 @@
 
       .modal-header {
         align-items: center;
-        border-bottom: 1px solid #dadada;
       }
 
       .modal-content {
@@ -51,13 +50,12 @@
       }
 
       .modal-buttons {
-        border-top: 1px solid #dadada;
         height: 90px;
         width: 100%;
       }
 
       .modal-countdown {
-        padding: 0 30px;
+        padding: 10px 30px;
         border-top: 0.5px solid #dadada;
         font-size: larger;
         font-style: italic;
@@ -65,22 +63,12 @@
       }
 
       .logo {
-        padding: 16px;
+        padding: 8px;
       }
 
       .logo-icon {
         vertical-align: text-bottom;
         margin-right: 12px;
-      }
-
-      .version {
-        color: #046ce4;
-        font-size: 18px;
-      }
-
-      .flex-container {
-        justify-content: space-between;
-        padding: 15px 90px;
       }
 
       .flex {
@@ -107,29 +95,24 @@
   </head>
 
   <body>
-    <div class="modal-header">
       <h1 class="logo">
         <i class="fas fa-clock"></i>
-        Tick
-        <span class="verson">(1.0.0)</span>
+        <u>Tick(1.0.0)</u>
       </h1>
-    </div>
-    <div class="modal-content">
-      <p>quantifies procrastination</p>
-    </div>
+      <p class="modal-content"><em>quantifies procrastination</em></p>
     <div class="modal-buttons">
-      <div class="flex-container">
-        <div class="flex">
-          <a href="friendsListYeet.html" target="_blank">
-            <button>View friends list</button>
-          </a>
-        </div>
-        <div class="flex">
-          <a href="progress.html" target="_blank">
-            <button>View progress</button>
-          </a>
-        </div>
-      </div>
+        <ul>
+          <div class="flex">
+            <li><a href="friendsListYeet.html" target="_blank">
+              <button>View friends list</button>
+            </a> </li>
+          </div>  
+          <div class="flex">
+            <li><a href="progress.html" target="_blank">
+              <button>View progress</button>
+            </a> </li>
+          </div>
+        </ul>
     </div>
     <div class="modal-countdown">
       23 hours until we email your friends! 
