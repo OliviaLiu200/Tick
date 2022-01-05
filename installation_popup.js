@@ -27,11 +27,11 @@ window.onload = function() {
         alert("please input a valid number between 1 and 23");
     } else {
         //hours = document.getElementById(id1).value;
-        chrome.storage.sync.set({'hourlimit': hours})
+        chrome.storage.local.set({'hourlimit': hours})
         //name = document.getElementById(id2).value;
-        chrome.storage.sync.set({'name': name})
+        chrome.storage.local.set({'name': name})
         //email = document.getElementById(id3).value;
-        chrome.storage.sync.set({'useremail': email})
+        chrome.storage.local.set({'useremail': email})
 
         window.location = "main_popup.html";
       }

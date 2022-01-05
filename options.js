@@ -1,7 +1,7 @@
 window.onload = function() {
     document.getElementById('save').onclick = function(){
     var value = document.getElementById('save new name').value;
-    chrome.storage.sync.set({'name': value}, function(){
+    chrome.storage.local.set({'name': value}, function(){
         alert("your name is now "+ value);
     });
 
@@ -17,8 +17,8 @@ window.onload = function() {
         }
         
         else {
-        chrome.storage.sync.set({'name': hourlimit}, function(){
-            alert("your new time limit is now "+ hourlimit + " hours");
+        chrome.storage.local.set({'hourlimit': hourlimit}, function(){
+            alert("your new time limit is now "+ chrome.storage.local.get('hourlimit') + " hours");
         });
         }
     

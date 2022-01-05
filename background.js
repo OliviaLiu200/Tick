@@ -118,11 +118,11 @@ chrome.tabs.onActivated.addListener(onTabTrack);
 chrome.runtime.onInstalled.addListener(function (object) {
     chrome.tabs.create({url: `chrome-extension://${chrome.runtime.id}/installation_popup.html`}, function (tab) {
         console.log("options page opened");
-
-        //added empty arrays for storage just in case
-        var emptyFemail = []
-        var emptyFlist = []
-        chrome.storage.sync.set({'flist': emptyFlist})
-        chrome.storage.sync.set({'femail': emptyFemail})
+        
     });
+    //added empty arrays for storage just in case
+    var emptyFemail = []
+    var emptyFlist = []
+    chrome.storage.local.set({'flist': emptyFlist})
+    chrome.storage.local.set({'femail': emptyFemail})
 });

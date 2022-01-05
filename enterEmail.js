@@ -1,25 +1,37 @@
-window.onload = function() {
-    
-var name;
-var email;
-var listFriends = [];
-function setName(id) {
-    name = document.getElementById(id).value;
+const fname = document.getElementById('name');
+const friendemail = document.getElementById('email');
+
+form.addEventListener('submit', (e) => {
+let messages = []
+
+if (fname.value === '' || fname.value == null){
+    messages.push('Name is required')
 }
-function setEmail(id) {
-    email = document.getElementById(id).value;
+
+if (friendemail.value ==='' || friendemail.value == null){
+    messages.push('Email is required')
 }
-function finalSubmit(id1, id2) {
-    if (document.getElementById(id1).value == "" || document.getElementById(id2).value == "") {
-        alert("Please fill in all fields.");
-    }
-    else {
-        //name = document.getElementById(id1).value;
-        //email = document.getElementById(id2).value;
-        chrome.storage.sync.set({'flist': chrome.storage.sync.get(flist).push(name)}) 
-        chrome.storage.sync.set({'femail': chrome.storage.sync.get(femail).push(email)})  
-        //listFriends.push([name, email]);
-        window.location = "friendsListYeet.html";
-    }
+
+if (messages.length > 0) {
+    errorElement.innerText = messages.join (', ')
+    e.preventDefault()
 }
+else {
+
+   try {
+   chrome.storage.local.set({'flist': chrome.storage.local.get('flist').push(fname)})
+   chrome.storage.local.set({'femail': chrome.storage.local.get('femail').push(friendemail)})
+
+   } catch {
+   var emptyarray = []
+   chrome.storage.local.set({'flist': emptyarray})
+   chrome.storage.local.set({'femail': emptyarray})
+
+   } finally{
+   chrome.storage.local.set({'flist': chrome.storage.local.get('flist').push(fname)})
+   //chrome.storage.local.set({flist: fname});
+   chrome.storage.local.set({'femail': chrome.storage.local.get('femail').push(friendemail)})
+   }
+
 }
+})

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src='enterEmail.js'></script>
 </head>
 <style>
     .inputs {
@@ -21,22 +22,17 @@
 </style>
 
 <body>
-    <script src='enterEmail.js'></script>
-
-    <form class="inputs" onsubmit="setName('name');return false" autocomplete="off">
-        <input type="text" placeholder="Name" name="name" id="name" required>
+    <div id="error"></div>
+    <form id="form" action="/" method="GET">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email">
+      </div>
+      <button type="submit">Submit</button>
     </form>
-    <form onsubmit="setEmail('email');return false" autocomplete="off">
-        <input type="text" placeholder="Enter Email" class="email" name="email" id="email" required>
-    </form>
-    <form onclick="finalSubmit('name', 'email');return false">
-        <input type="submit" id="submit" style="position: fixed; margin-top: 40px; left: 15px">
-    </form>
-    
-    <a href="friendsListYeet.html">
-        <button class="back" style="margin-top: 7px; margin-left: 80px">Back</button>
-    </a>
-    <p id="demo"></p>
 </body>
-
 </html>
