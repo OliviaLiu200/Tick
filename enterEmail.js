@@ -28,9 +28,14 @@ else {
    chrome.storage.local.set({'femail': emptyarray})
 
    } finally{
-   chrome.storage.local.set({'flist': chrome.storage.local.get('flist').push(fname)})
+   chrome.storage.local.get(['flist', 'femail'], function(result){
+    let storedflist = result['flist'];
+    let storedfemail = result['femail'];
+   chrome.storage.local.set({'flist': storedflist.push(fname)})
    //chrome.storage.local.set({flist: fname});
-   chrome.storage.local.set({'femail': chrome.storage.local.get('femail').push(friendemail)})
+   chrome.storage.local.set({'femail': storedfemail.push(friendemail)})
+   window.location = 'friendsListYeet.html'
+    })
    }
 
 }
