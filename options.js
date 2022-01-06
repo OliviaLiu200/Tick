@@ -2,9 +2,12 @@ window.onload = function() {
     document.getElementById('save').onclick = function(){
     var value = document.getElementById('save new name').value;
     chrome.storage.local.set({'name': value}, function(){
-        alert("your name is now "+ value);
+        chrome.storage.local.get(['name'], function(result){
+            let storedname = result['name']
+        alert("your name is now "+ storedname);
+        
     });
-
+    })
     }
 
     document.getElementById('hourlimit').onclick = function(){
@@ -18,7 +21,10 @@ window.onload = function() {
         
         else {
         chrome.storage.local.set({'hourlimit': hourlimit}, function(){
-            alert("your new time limit is now "+ chrome.storage.local.get('hourlimit') + " hours");
+            chrome.storage.local.get(['hourlimit'], function(result){
+                let storedhourlimit = result['hourlimit']
+            alert("your new time limit is now "+ storedhourlimit + " hours");
+            })
         });
         }
     
