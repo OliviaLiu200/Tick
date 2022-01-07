@@ -5,13 +5,13 @@ window.onload = function() {
     var buttonsclicked = 0;
     var sitesChosen = [];
     function setHours(id) {
-      hours = document.getElementById(id).value;
+      hours = document.getElementById(hours).value;
     }
     function setName(id) {
-      name = document.getElementById(id).value;
+      name = document.getElementById(name).value;
     }
     function setEmail(id) {
-      email = document.getElementById(id).value;
+      email = document.getElementById(email).value;
     }
     function finalSubmit(id1, id2, id3) {
       if (sitesChosen.length == 0) {

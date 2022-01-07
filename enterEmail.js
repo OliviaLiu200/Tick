@@ -1,7 +1,10 @@
-const fname = document.getElementById('name');
-const friendemail = document.getElementById('email');
+window.onload = function() {
 
 form.addEventListener('submit', (e) => {
+    var fname = document.getElementById('name');
+var friendemail = document.getElementById('email');
+//chrome.storage.local.set({'storedinfname': fname})
+
 let messages = []
 
 if (fname.value === '' || fname.value == null){
@@ -15,28 +18,23 @@ if (friendemail.value ==='' || friendemail.value == null){
 if (messages.length > 0) {
     errorElement.innerText = messages.join (', ')
     e.preventDefault()
-}
-else {
+} else {
 
-   try {
-   chrome.storage.local.set({'flist': chrome.storage.local.get('flist').push(fname)})
-   chrome.storage.local.set({'femail': chrome.storage.local.get('femail').push(friendemail)})
+        chrome.storage.local.get(['flist', 'femail'], function(result){
+            let storedfriendlist = result['flist']
+            let storedfriendemail = result['femail']
 
-   } catch {
-   var emptyarray = []
-   chrome.storage.local.set({'flist': emptyarray})
-   chrome.storage.local.set({'femail': emptyarray})
+        storedfriendlist.push(fname)
+        storedfriendemail.push(friendemail)
 
-   } finally{
-   chrome.storage.local.get(['flist', 'femail'], function(result){
-    let storedflist = result['flist'];
-    let storedfemail = result['femail'];
-   chrome.storage.local.set({'flist': storedflist.push(fname)})
-   //chrome.storage.local.set({flist: fname});
-   chrome.storage.local.set({'femail': storedfemail.push(friendemail)})
-   window.location = 'friendsListYeet.html'
-    })
-   }
-
+        chrome.storage.local.set({'flist': storedfriendlist})
+        chrome.storage.local.set({'femail': storedfriendemail})
+        
+        window.location = 'friendsListYeet.html'
+    });
+    
+  
 }
 })
+
+}
