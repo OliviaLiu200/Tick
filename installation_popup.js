@@ -1,9 +1,34 @@
-window.onload = function() {
-    var hours;
-    var name;
-    var email;
-    var buttonsclicked = 0;
-    var sitesChosen = [];
+import {client, createData} from '/mongo.js';
+
+//client = require('node-html-parser');
+//createData = require('node-html-parser');
+//window.onload = function() {
+
+async function load() {
+  document.getElementById('submit').onclick = function(){
+    let hours = document.getElementById('hours').value;
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+
+    alert(hours);
+  }
+    await createData(client, {name: name,
+                                hours: hours,
+                                email: email
+    });
+
+
+  
+}
+
+load();
+//}
+  /*
+    let hours;
+    let name;
+    let email;
+    let buttonsclicked = 0;
+    let sitesChosen = [];
     function setHours(id) {
       hours = document.getElementById(hours).value;
     }
@@ -66,4 +91,4 @@ window.onload = function() {
         }
         else return true;
         }
-}
+        */

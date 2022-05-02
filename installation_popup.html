@@ -36,7 +36,7 @@
 </head>
 
 <body>
-  <script src='installation_popup.js'></script>
+  <script type='module' src='installation_popup.js'></script>
   <div id="top">
     <h1 class="logo" style="color: #046ce4">
       <i class="fas fa-clock"></i>
@@ -123,22 +123,43 @@
   </div>
   <div id="bottom">
     <br />
-    <form style="margin: 20px; margin-left: 120px; margin-top: 10px" onsubmit="setHours('hours');return false"
+    <!--
+    <form style="margin: 20px; margin-left: 120px; margin-top: 10px" onsubmit="setHours('hours')
       autocomplete="off">
       <label for="hours" style="font-size: 30px">Hours: </label>
       <input type="number" id="hours" style="font-size: 30px">
     </form>
-    <form style="margin: 20px; margin-left: 121px; margin-top: 10px" onsubmit="setName('name');return false"
+    <form style="margin: 20px; margin-left: 121px; margin-top: 10px" onsubmit="setName('name')
       autocomplete="off">
       <label for="name" style="font-size: 30px">Name: </label>
       <input type="text" id="name" style="font-size: 30px" />
       <input type="submit" id="submit" style="font-size: 30px; margin-left: 70px"
         onclick="finalSubmit('hours','name','email')">
     </form>
-    <form style="margin: 20px; margin-left: 129px; margin-top: 10px" onsubmit="setEmail('email');return false"
+    <form style="margin: 20px; margin-left: 129px; margin-top: 10px" onsubmit="setEmail('email')
       autocomplete="off">
       <label for="email" style="font-size: 30px">Email: </label>
       <input type="text" id="email" style="font-size: 30px" />
+    </form>
+  -->
+      
+
+    <form style="margin: 20px; margin-left: 120px; margin-top: 10px">
+      <label for = "hours" style="font-size: 30px">Hours: </label>
+      <input type="number" id="hours" style="font-size: 30px"><br>
+      <br>
+
+      <label for="name" style="font-size: 30px">Name: </label>
+      <input type="text" id="name" style="font-size: 30px" /><br>
+      <br>
+
+      <label for="email" style="font-size: 30px">Email: </label>
+      <input type="text" id="email" style="font-size: 30px" /><br>
+      <br>
+
+      <input type="submit" id="submit" value = "Submit" style="font-size: 30px">
+
+    </form>
   </div>
 </body>
 
