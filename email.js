@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 function sendemail(username, useremail, friendname, friendemail){
 
@@ -6,7 +7,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'tickreminder@gmail.com',
-    pass: 'tickreminder123'
+    pass: process.env.EMAILPASSWORD
   }
 
 });
